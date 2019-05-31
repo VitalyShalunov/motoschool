@@ -32,22 +32,9 @@ function code() {
         });
 
 
-        var comment = new Array();
-        var i=0;
-
-
-        $("#btntextblock").on("click", function () { //при клике на кнопку отправить
-            var tex = $("#textblock").val();
-            if(tex!==""){
-            $('#comment ul').append("<li>" + tex + "</li><br>");
-            comment[i++]= tex;
-            console.log("i="+i+"  text="+tex);
-            $("#textblock").val("");
-            }
-        });
-
+       
         
-        
+       // console.log(com);
 
         
         

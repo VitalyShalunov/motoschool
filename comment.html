@@ -50,7 +50,7 @@
     <ul>
 
     </ul>
-    <textarea name="textblock" id="textblock" cols="50" rows="5"></textarea>
+    <textarea name="textblock" id="textblock" cols="35" rows="5"></textarea>
     
 <br>    <button type="button" id="btntextblock" class="btn btn-outline-success">Отправить</button>
 
@@ -83,12 +83,53 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script>
-    localStorage.clear();
-    window.onbeforeunload = function() {
-           localStorage.setItem(comment, JSON.stringify(comment));
-        comment = JSON.parse(localStorage.getItem("comment"));
-          };
 
+   //localStorage.clear();
+
+    var comment = new Array();
+            var i=0;
+            if (document.readyState !== "loading") {
+    showcontent();
+} else {
+    document.addEventListener("DOMContentLoaded", showcontent());
+}
+
+function showcontent(){
+     
+       //if(localStorage.getItem('comment') !==NULL){
+            comment = JSON.parse(localStorage['comment']);
+            if(comment){
+           for (var i=0;i<comment.length;i++)
+           $('#comment ul').append("<li>" + comment[i] + "</li><br>");
+            }
+         // }
+       //   }
+
+}
+           //comment = JSON.parse(localStorage.getItem("comment"));
+  // var li=$('li');
+  //       var kolli=$("li").length;
+  //       for (i=0;i<kolli;i++)
+  //       comment[i]= li[i].val();
+      i=comment.length;
+        $("#btntextblock").on("click", function () { //при клике на кнопку отправить
+            
+            var tex = $("#textblock").val();
+            if(tex!==""){
+            $('#comment ul').append("<li>" + tex + "</li><br>");
+            comment[i++]= tex;
+           // console.log("comment[i]"+i+"="+comment[i-1]);
+            $("#textblock").val("");
+            }
+        });
+
+
+    window.onbeforeunload = function() {
+      
+           localStorage.setItem('comment', JSON.stringify(comment));
+           
+          };
+          
           console.log(typeof comment); // объект
   console.log(comment); // Объект {x: 12, y: 56}
           </script>
