@@ -29,7 +29,7 @@
   </header>
   <hr>
   <nav>
-
+    <!-- Навигация -->
     <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 15px;">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand"><a href="index.html" class="navbar-brand"><i class="fa fa-home fa-lg"
@@ -49,8 +49,9 @@
 
   <main>
     <article>
-      <h2 style="color:wheat;margin: 20px;">Отзывы</h2>
-      <div id="comment">
+      <!-- Блок для оставления отзывов, взаимодействие образовано с помощью скрипта -->
+      <div >      <h2 style="color:wheat;margin: 20px;">Отзывы</h2>
+      <div class="container" id="comment">
         <ul>
 
         </ul>
@@ -58,6 +59,7 @@
 
         <br> <button type="button" id="btntextblock" style="background-color: greenyellow;"
           class="btn btn-outline-success">Отправить</button>
+        </div>
 
       </div>
 
@@ -68,8 +70,8 @@
     </article>
 
     <aside>
-
-     <div id="mot"> <i class="fas fa-motorcycle" style="color:white; margin-left: +50px;"></i></div>
+      <!-- Иконка, у которой будет анимация -->
+      <div id="mot"> <i class="fas fa-motorcycle" style="color:white; margin-left: +50px;"></i></div>
 
 
 
@@ -94,7 +96,7 @@
 
     //localStorage.clear();
 
-    var comment = new Array();
+    var comment = new Array(); //массив для хранения отзывов
     var i = 0;
     if (document.readyState !== "loading") {
       showcontent();
@@ -103,24 +105,20 @@
     }
 
     function showcontent() {
-
-      //if(localStorage.getItem('comment') !==NULL){
-      comment = JSON.parse(localStorage['comment']);
+      // Загрузка прошлых отзывов
+      if(localStorage.getItem('comment') !==null){
+      comment = JSON.parse(localStorage['comment']); //получение массива из localstorage
       if (comment) {
         for (var i = 0; i < comment.length; i++)
           $('#comment ul').append("<li>" + comment[i] + "</li><br>");
       }
       // }
       //   }
-
+      }
     }
-    //comment = JSON.parse(localStorage.getItem("comment"));
-    // var li=$('li');
-    //       var kolli=$("li").length;
-    //       for (i=0;i<kolli;i++)
-    //       comment[i]= li[i].val();
+   
     i = comment.length;
-    $("#btntextblock").on("click", function () { //при клике на кнопку отправить
+    $("#btntextblock").on("click", function () { //при клике на кнопку отправить будем добавляться отзыв 
 
       var tex = $("#textblock").val();
       if (tex !== "") {
@@ -131,7 +129,7 @@
       }
     });
 
-
+    // При выходе из данной вкладки массив отзывов будет сохранён в local storage
     window.onbeforeunload = function () {
 
       localStorage.setItem('comment', JSON.stringify(comment));
@@ -142,11 +140,11 @@
     console.log(comment);
 
 
-    $("#textblock").on('mouseover', function() { //анимация для изображения
-        $("#mot").animate({
-          marginLeft: "+=500px"
-        }, 800
-        );
+    $("#textblock").on('mouseover', function () { //анимация для изображения
+      $("#mot").animate({
+        marginLeft: "+=500px"
+      }, 800
+      );
     });
 
 

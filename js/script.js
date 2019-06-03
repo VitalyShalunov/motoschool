@@ -7,36 +7,36 @@ if (document.readyState !== "loading") {
 
 function code() {
 
-    $(".imgan").on('mouseover', function() { //анимация для изображения
+    $(".imgan").on('mouseover', function () { //анимация для изображения
         $(".imgan").animate({
             "border-radius": "35px"
-        
+            
         }, 500
         );
     });
-    $(".imgan").on('mouseover', function() { //анимация для изображения
+    $(".imgan").on('mouseover', function () { //анимация для изображения
         $(".imgan").animate({
-            "width": "+=50px"
+            "opacity": "0.5"
         }, 500);
     });
-        $(".imgan").on('mouseout', function() { //анимация для изображения
-            $(".imgan").animate({
-                "border-radius": "0px"
-            }, 500);
-    
-        });
-        $(".imgan").on('mouseover', function() { //анимация для изображения
-            $(".imgan").animate({
-                "width": "-=50px"
-            }, 500);
-        });
+    $(".imgan").on('mouseout', function () { //анимация для изображения
+        $(".imgan").animate({
+            "border-radius": "0px"
+        }, 500);
+
+    });
+    $(".imgan").on('mouseover', function () { //анимация для изображения
+        $(".imgan").animate({
+            "opacity": "1.0"
+        }, 500);
+    });
 
 
-       
-        
-       // console.log(com);
 
-        
-        
 
-    }
+    // console.log(com);
+
+
+
+
+}
