@@ -17,10 +17,7 @@ footer{
 }
 
 
-section.pricing {
-	/* background: #007bff; */
-	/* background: linear-gradient(to right, #0062E6, #33AEFF); */
-  }
+
   
   .pricing .card {
 		background: rgb(197, 186, 172);
@@ -106,6 +103,42 @@ section.pricing {
 }
 
 
+/* @media screen and (max-width: 600px) {
+	#head {
+	color:aqua;
+	}.container .cols.col-12 {width: 100%;}
+} */
+
+
+@media screen and (max-width: 985px) {
+	h1{
+			font-size: 20px;
+	}	
+	#head {width: auto!important; }
+	#head.row{width: auto; }
+	#textblock,iframe{width:90%; }
+	#comment{width:auto; }
+#pus{width:auto; }
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+	#h1head{
+			font-size: 15px;
+	}	
+.col-sm a, .row a,#btn,.lead,.description{
+		font-size: 15px!important;
+}	
+#comment{margin-left: -10%!important;	font-size: 15px!important; }
+footer	{font-size: 10px;}
+h2{font-size: 100%!important;}
+.list-group-item{
+	font-size: 14px!important; width: auto;
+}
+}
+
 
 	
 #head{ 
@@ -119,7 +152,7 @@ section.pricing {
     padding: 10px;
     background-color: rgba(199, 19, 19, 0.815);
     text-align: center;
-	font-size: 400%;
+	/* font-size: 400%; */
 	font-family: 'Raleway', sans-serif;
 }
 nav a{
@@ -175,7 +208,7 @@ nav a{
 }
 #textblock{
 	/* текстовое поле */
-	margin-left: 100px;
+	margin-left: 10%;
     margin-top: 50px;
     border-radius: 25px;
 	border: 10px solid #ecd6d6;
@@ -183,14 +216,16 @@ nav a{
 }
 #btntextblock{
 	/* кнопка текстового поля */
-	margin-left: 120px;
+	margin-left: 10%;
 	margin-top:15px;	
 }
 #comment{
 	/* стили для отзывов */
 	color:white;
 	font-size: 25px;
-	margin-left: 120px;
+	margin-left: 10%;
 	margin-top:25px;	
 	font-family: 'Libre Franklin', sans-serif;
 }
+
+
